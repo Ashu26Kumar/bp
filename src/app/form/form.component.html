@@ -1,0 +1,18 @@
+<form  [formGroup]='state'>
+  <input 
+    type="text"
+    formControlName='name' 
+    [typeahead]="states"
+    [typeaheadOptionsLimit]="7"
+    [typeaheadMinLength]="0"
+    [typeaheadScrollable]="true"
+       [typeaheadOptionsInScrollableView]="5"
+       typeaheadOptionField="name"
+       (typeaheadOnSelect)="onSelect($event)"
+    placeholder="Typeahead inside a form" (keyup)="check($event.target.value)">
+
+    <input type="text" formControlName="region">
+  <button (click)="hello()">Submit</button>
+</form>
+<br>
+<app-table [tableInput]="result"></app-table>
